@@ -10,10 +10,10 @@ position: relative;
 
 export const StarterDiv = styled.div`
   text-align: center;
-  background-color: black;
+  background-color: ${props => props.theme.colors.background};
   width: 100%;
   height: 100%;
-  transition: ${(props) => (props.isStart ? "transform 1s linear" : "none")};
+  transition: transform 0.7s linear, background 1s linear;
   transform: ${(props) => (props.isStart ? "translateY(-100%)" : "none")};
 `;
 
@@ -21,22 +21,29 @@ export const HContainer = styled.div``;
 
 export const H1 = styled.h1`
 padding-top: 130px;
-  color: white;
+  color: ${props => props.theme.colors.color};
   font-family: "Roboto";
   font-size: 70px;
+  transition: color 1s linear;
 `;
 
 export const Pp = styled.p`
-  color: white;
+  color: ${props => props.theme.colors.color};
   padding: 24px 0px;
   font-family: "Open Sans";
+  transition: color 1s linear;
 `;
 
 export const Cover = styled.div`
 position: absolute;
-background-color: black;
+background-color: ${props => props.theme.colors.background};
 width: 100vw;
 height: 100vh;
-transition: ${(props) => (props.coverStart ? "top 3s linear" : "none")};
-top: ${(props) => (props.coverStart ? "100vh" : "0")};
+transition: top 4s linear, background 1s linear;
+top: ${(props) => props.coverTop};
+`;
+
+export const LangDiv = styled.div`
+display: flex;
+flex-direction: column;
 `;

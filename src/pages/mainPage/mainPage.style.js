@@ -13,8 +13,8 @@ export const StarterDiv = styled.div`
   background-color: ${props => props.theme.colors.background};
   width: 100%;
   height: 100%;
-  transition: transform 0.7s linear, background 1s linear;
-  transform: ${(props) => (props.isStart ? "translateY(-100%)" : "none")};
+  transition: background 1s linear;
+ 
 `;
 
 export const HContainer = styled.div``;

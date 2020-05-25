@@ -1,1 +1,3 @@
 export const TOGGLE_THEME = "TOGGLE_THEME"
+
+export const SET_LANGUAGE = "SET_LANGUAGE"

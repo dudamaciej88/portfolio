@@ -7,6 +7,8 @@ const Button = ({ children, clicked }) => {
   const [opacityValue, setOpacityValue] = useState(0);
   const [borderDarkValue, setBorderDarkValue] = useState("1px solid black");
   const [borderLightValue, setBorderLightValue] = useState("1px solid white");
+  const [rotateArrow, setRotateArrow] = useState(false);
+  const [arrowOpacity, setArrowOpacity] = useState("1");
 
   useEffect(() => {
     console.log("UseEffect");
@@ -18,6 +20,10 @@ const Button = ({ children, clicked }) => {
 
   const clickHandler = () => {
     clicked();
+    setTimeout(() => {
+      setArrowOpacity("0");
+    }, 500);
+    setRotateArrow(true);
     if (isDarkMode) {
       setBorderDarkValue("1px solid white");
     } else {
@@ -30,9 +36,10 @@ const Button = ({ children, clicked }) => {
       onClick={() => clickHandler()}
       opacityValue={opacityValue}
       borderValue={isDarkMode ? borderDarkValue : borderLightValue}
-      
+      arrowopacity={arrowOpacity}
     >
       {children}
+      <S.Arrow rotatearrow={rotateArrow ? "rotate(180deg)" : "none"} />
     </S.Button>
   );
 };

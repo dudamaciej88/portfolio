@@ -14,11 +14,11 @@ const ThemeChanger = ({left}) => {
   }, );
 
   return (
-    <S.Div left={left} onClick={() => dispatch({ type: "TOGGLE_THEME" })}>
+    <S.Div left={left} >
       {isDarkMode ? (
-        <S.Sun opacityvalue={opacityValue} />
+        <S.Sun opacityvalue={opacityValue} onClick={() => dispatch({ type: "TOGGLE_THEME" })}/>
       ) : (
-        <S.Moon opacityvalue={opacityValue} />
+        <S.Moon opacityvalue={opacityValue} onClick={() => dispatch({ type: "TOGGLE_THEME" })}/>
       )}
     </S.Div>
   );

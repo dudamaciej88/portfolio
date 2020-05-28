@@ -7,6 +7,8 @@ import lightTheme from "./themes/light";
 import darkTheme from "./themes/dark";
 import MainPage from "./pages/mainPage/mainPage";
 import AboutPage from "./pages/aboutPage/aboutPage";
+import ContactPage from "./pages/contactPage/contactPage";
+import ProjectsPage from "./pages/projectsPage/projectsPage";
 
 function App() {
   const isDarkMode = useSelector((state) => state.ui.isDarkMode);
@@ -18,6 +20,12 @@ function App() {
         </Route>
         <Route path="/about">
           <AboutPage />
+        </Route>
+        <Route path="/contact">
+          <ContactPage />
+        </Route>
+        <Route path="/projects">
+          <ProjectsPage />
         </Route>
       </Switch>
     </ThemeProvider>

@@ -4,6 +4,7 @@ import { ReactComponent as MoonIcon } from "../../assets/icons/moon.svg";
 
 export const Div = styled.div`
   float: ${(props) => (props.left ? "left" : "none")};
+  display: inline-block;
 `;
 
 export const Sun = styled(SunIcon)`

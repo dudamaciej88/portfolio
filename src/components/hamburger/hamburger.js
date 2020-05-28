@@ -1,11 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as S from "./hamburger.style";
 
-const Hamburger = () => {
+const Hamburger = ({hambClicked}) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [opacityValue, setOpacityValue] = useState("0");
+
+  useEffect(() => {
+    setTimeout(() => {
+      setOpacityValue("1");
+    }, 2600);
+  }, );
+
+    const clickHandler = () => {
+        setIsOpen(!isOpen);
+        hambClicked();
+    }
 
   return (
-    <S.Div isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
+    <S.Div opacityvalue={opacityValue} isOpen={isOpen} onClick={() => clickHandler()}>
       <S.Span1 isOpen={isOpen}></S.Span1>
       <S.Span2 isOpen={isOpen}></S.Span2>
       <S.Span3 isOpen={isOpen}></S.Span3>

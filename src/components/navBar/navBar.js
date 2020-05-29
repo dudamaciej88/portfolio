@@ -5,6 +5,7 @@ import ThemeChanger from "../themeChanger/themeChanger";
 import LangChanger from "../langChanger/langChanger";
 import Hamburger from "../hamburger/hamburger";
 import MenuMobile from "./menuMobile/menuMobile";
+import MenuDesktop from "./menuDesktop/menuDesktop";
 
 const NavBar = () => {
   const language = useSelector((state) => state.language.language);
@@ -20,6 +21,7 @@ const NavBar = () => {
       <LangChanger />
       <Hamburger hambClicked={() => setHambOpen(!hambOpen)} />
       <MenuMobile isHambOpen={hambOpen} />
+      <MenuDesktop />
     </S.Div>
   );
 };

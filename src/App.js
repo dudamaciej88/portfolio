@@ -9,11 +9,13 @@ import MainPage from "./pages/mainPage/mainPage";
 import AboutPage from "./pages/aboutPage/aboutPage";
 import ContactPage from "./pages/contactPage/contactPage";
 import ProjectsPage from "./pages/projectsPage/projectsPage";
+import NavBar from "./components/navBar/navBar";
 
 function App() {
   const isDarkMode = useSelector((state) => state.ui.isDarkMode);
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+      <NavBar />
       <Switch>
         <Route exact path="/">
           <MainPage />

@@ -8,9 +8,17 @@ const NavLink = ({ children, to }) => {
 
   const clickHandler = (url) => {
     history.push(url);
+    
   };
 
-  return <S.Button active={location.pathname === to} onClick={() => clickHandler(to)}>{children}</S.Button>;
+  return (
+    <S.Button
+      active={location.pathname === to}
+      onClick={() => clickHandler(to)}
+    >
+      {children}
+    </S.Button>
+  );
 };
 
 export default NavLink;

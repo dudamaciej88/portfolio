@@ -8,9 +8,12 @@ const Skills = () => {
 
   const language = useSelector((state) => state.language.language);
   useEffect(() => {
-    setTimeout(() => {
+    let timer = setTimeout(() => {
       setScaleValue("scale(1,1)");
     }, 2500);
+    return () => {
+      clearTimeout(timer);
+    };
   }, []);
 
   return (

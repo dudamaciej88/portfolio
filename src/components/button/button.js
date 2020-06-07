@@ -11,12 +11,10 @@ const Button = ({ children, clicked }) => {
   const [arrowOpacity, setArrowOpacity] = useState("1");
 
   useEffect(() => {
-    console.log("UseEffect");
     setTimeout(() => {
       setOpacityValue("1");
     }, 2500);
   }, []);
-  console.log("Button");
 
   const clickHandler = () => {
     clicked();

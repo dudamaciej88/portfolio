@@ -5,9 +5,14 @@ const SkillsDisplayer = () => {
   const [opacityValue, setOpacityValue] = useState("0");
 
   useEffect(() => {
-    setTimeout(() => {
+     let timer = setTimeout(() => {
       setOpacityValue("1");
     }, 3500);
+    return () => {
+      
+        clearTimeout(timer);
+      
+    }
   }, []);
 
   return (

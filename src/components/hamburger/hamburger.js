@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as S from "./hamburger.style";
 
-const Hamburger = ({hambClicked}) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Hamburger = ({hambClicked, isOpen}) => {
   const [opacityValue, setOpacityValue] = useState("0");
 
   useEffect(() => {
@@ -12,7 +11,7 @@ const Hamburger = ({hambClicked}) => {
   }, );
 
     const clickHandler = () => {
-        setIsOpen(!isOpen);
+        
         hambClicked();
     }
 

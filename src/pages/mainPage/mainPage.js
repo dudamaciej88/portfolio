@@ -9,7 +9,7 @@ const MainPage = () => {
   let history = useHistory();
   const dispatch = useDispatch();
   const [coverTop, setCoverTop] = useState("0");
-  console.log("MainPage");
+  
 
   const animation = (lang) => {
     dispatch({ type: "SET_LANGUAGE", payload: lang });

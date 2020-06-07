@@ -5,6 +5,6 @@ export const Div = styled.div`
   min-height: 100vh;
   background-color: ${(props) => props.theme.colors.background};
   
-  transition: opacity 1s linear, background-image 1s linear;
-  opacity: ${(props) => props.opacity};
+  transition: opacity 1s linear, background-color 1s linear;
+  
 `;

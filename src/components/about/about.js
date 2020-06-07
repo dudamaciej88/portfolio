@@ -7,17 +7,22 @@ const About = () => {
   const [opacityValue, setOpacityValue] = useState("0");
   const language = useSelector((state) => state.language.language);
   useEffect(() => {
-    setTimeout(() => {
+    let timer = setTimeout(() => {
       setScaleValue("scale(1,1)");
     }, 500);
-    
+    return () => {
+      clearTimeout(timer);
+    };
   }, []);
 
   useEffect(() => {
-    setTimeout(() => {
+    let timer = setTimeout(() => {
       setOpacityValue("1");
     }, 1500);
-  }, [])
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
 
   return (
     <S.Div>
